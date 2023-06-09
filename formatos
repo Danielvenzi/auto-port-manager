@@ -1,0 +1,29 @@
+
+# Formato para autenticação com o servidor
+
+{
+    "cliente_info":{}         # dicionário contendo nome, grupo e pb_key
+}
+
+# Resposta do servidor para autenticação
+
+{
+    "status":"..."             # Success or Error
+    "id_hash":"..."            # hash posteriormente usado para identificação do usuário
+}
+
+
+
+# Formato requisição cliente -> servidor inicial
+
+{
+    "jwt":"..."               # Jason Web Token contendo as informações sobre o usuário (nome, grupo, id_hash)
+}
+
+# Formato respota do servidor -> cliente após autenticação e alocação de porta dedicada
+
+{
+    "status":"..."             # Success or Error
+    "port":number              # Número da porta TCP usada para estabelecer a comunicação WebSocket final
+}
+
